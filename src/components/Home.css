@@ -1,0 +1,114 @@
+/* --- THEME --*/
+.display[data-theme="theme-darkest"] {
+    --font-color: #fff;
+    --border-color: rgb(150, 150, 150);
+    --button-background-color: rgb(50, 50, 50);
+    --background-color: rgb(30, 30, 30);
+}
+
+.display[data-theme="theme-dark"] {
+    --font-color: #fff;
+    --border-color: rgb(150, 150, 150);
+    --button-background-color: rgb(84, 84, 84);
+    --background-color: rgb(64, 64, 64);
+}
+
+.display[data-theme="theme-light"] {
+    --font-color: rgb(64, 64, 64);
+    --border-color: rgb(84, 84, 84);
+    --button-background-color: rgb(220, 220, 220);
+    --background-color: rgb(200, 200, 200);
+}
+
+.display[data-theme="theme-lightest"] {
+    --font-color: rgb(30, 30, 30);
+    --border-color: rgb(50, 50, 50);
+    --button-background-color: rgb(240, 240, 240);
+    --background-color: rgb(220, 220, 220);
+}
+
+body {
+    overflow: auto;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+hr {
+    margin: 2rem 0;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+}
+
+.display {
+    margin: 1rem auto;
+    color: var(--font-color);
+}
+
+.inputs {
+    margin-top: 1.5rem;
+}
+
+.input,
+.addVariable {
+    margin-bottom: 1rem;
+    padding: 1rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+}
+
+.addVariable input:first-of-type {
+    margin-bottom: 3rem;
+}
+.buttons {
+    display: flex;
+}
+
+.button {
+    flex-grow: 1;
+    text-align: center;
+    margin: 1rem 0.25rem 0 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid var(--font-color);
+    border-radius: 5px;
+    background-color: var(--button-background-color);
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--font-color);
+    color: var(--button-background-color);
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.7rem;
+    padding-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.footer span {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    color: var(--font-color);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 110%;
+    left: 50%;
+    margin-left: -50%; /* Use half of the width (120/2 = 60), to center the tooltip */
+}

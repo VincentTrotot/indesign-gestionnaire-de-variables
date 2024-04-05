@@ -1,0 +1,66 @@
+{
+    "id": "034fb6aa",
+    "name": "Gestionnaire de variables",
+    "version": "1.1.0",
+    "main": "index.html",
+    "manifestVersion": 5,
+    "host": [
+        {
+            "app": "ID",
+            "minVersion": "19.3.0"
+        }
+    ],
+    "entrypoints": [
+        {
+            "type": "panel",
+            "id": "demos",
+            "label": {
+                "default": "Variables du document"
+            },
+            "minimumSize": {
+                "width": 230,
+                "height": 200
+            },
+            "maximumSize": {
+                "width": 2000,
+                "height": 2000
+            },
+            "preferredDockedSize": {
+                "width": 230,
+                "height": 300
+            },
+            "preferredFloatingSize": {
+                "width": 230,
+                "height": 300
+            },
+            "icons": [
+                {
+                    "width": 23,
+                    "height": 23,
+                    "path": "icons/dark.png",
+                    "scale": [1, 2, 3],
+                    "theme": ["darkest", "dark", "medium"],
+                    "species": ["chrome"]
+                },
+                {
+                    "width": 23,
+                    "height": 23,
+                    "path": "icons/light.png",
+                    "scale": [1, 2, 3],
+                    "theme": ["lightest", "light"],
+                    "species": ["chrome"]
+                }
+            ]
+        }
+    ],
+    "icons": [
+        {
+            "width": 69,
+            "height": 69,
+            "path": "icons/plugin.png",
+            "scale": [1, 2, 3],
+            "theme": ["darkest", "dark", "medium", "lightest", "light", "all"],
+            "species": ["pluginList"]
+        }
+    ]
+}
