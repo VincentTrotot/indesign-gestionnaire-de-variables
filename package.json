@@ -1,6 +1,6 @@
 {
   "name": "com.adobe.uxp.starter.react.id",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "watch": "nodemon -w src -e js,jsx,json,css,html -w webpack.config.js -x npm run dev",
     "dev": "webpack --mode development",

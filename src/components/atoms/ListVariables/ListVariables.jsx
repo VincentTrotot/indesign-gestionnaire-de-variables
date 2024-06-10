@@ -1,4 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
+import { LangContext } from "../../Home.jsx";
+import {LANGUAGE} from "../../../hooks/useLanguage.jsx"
+
 
 export const ListVariables = ({
     variables,
@@ -6,10 +9,11 @@ export const ListVariables = ({
     updateVariable,
     insertVariable,
 }) => {
+    const lang = useContext(LangContext);
     if (variables.length == 0) {
         return (
             <div>
-                <b>Pas de variable dans le document</b>
+                <b>{lang == LANGUAGE.FR ? 'Pas de variable dans le document' : 'No variable in the document'}</b>
             </div>
         );
     }
@@ -40,7 +44,7 @@ export const ListVariables = ({
                                 insertVariable(v.index);
                             }}
                         >
-                            Insérer
+                            {lang == LANGUAGE.FR ? 'Insérer' : 'Insert'}
                         </div>
                         <div
                             className="button"
@@ -48,7 +52,7 @@ export const ListVariables = ({
                                 removeVariable(v.index);
                             }}
                         >
-                            Supprimer
+                            {lang == LANGUAGE.FR ? 'Supprimer' : 'Delete'}
                         </div>
                     </div>
                 </div>

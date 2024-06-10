@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useVariables } from "../../../hooks/useVariables.jsx";
 import { useToggle } from "../../../hooks/useToggle.jsx";
 import { AddVariable } from "../../atoms/AddVariable/AddVariable.jsx";
 import { ListVariables } from "../../atoms/ListVariables/ListVariables.jsx";
+import { LangContext } from "../../Home.jsx";
+import {LANGUAGE} from "../../../hooks/useLanguage.jsx"
 
 export const Variables = () => {
+    const lang = useContext(LangContext);
+    
     const {
         variables,
         isOpenDocument,
@@ -24,7 +28,7 @@ export const Variables = () => {
     if (!isOpenDocument) {
         return (
             <div>
-                <b>Aucun document ouvert</b>
+                <b>{lang == LANGUAGE.FR ? 'Aucun document ouvert' : 'No open document'}</b>
             </div>
         );
     }
@@ -32,8 +36,13 @@ export const Variables = () => {
     return (
         <>
             <p>
-                {variables.length} variable{variables.length > 1 && "s"} dans ce
-                document.
+                {lang == LANGUAGE.FR ? 
+                    <>
+                        {variables.length} variable{variables.length > 1 && "s"} dans ce document.
+                    </> : 
+                    <>
+                    {variables.length} variable{variables.length > 1 && "s"} in this document.
+                </>}
             </p>
             {variables.length != 0 && (
                 <>
@@ -41,7 +50,15 @@ export const Variables = () => {
                         className="button"
                         onClick={toggleAfficherListVariables}
                     >
+                        {lang == LANGUAGE.FR ? 
+                    <>
                         {afficherListVariables ? "Masquer" : "Afficher"}
+                        
+                    </> : 
+                    <>
+                    {afficherListVariables ? "Hide" : "Show"}
+                    
+                </>}
                     </div>
                     {afficherListVariables && (
                         <ListVariables
@@ -60,11 +77,6 @@ export const Variables = () => {
                 inputVariableValueRef={inputVariableValueRef}
                 addVariable={addVariable}
             />
-            <hr />
-            <div className="footer">
-                Avec ♥ par Vincent Trotot
-                <span>contact@vincent-trotot.fr</span>
-            </div>
         </>
     );
 };
